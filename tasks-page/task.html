@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="flex bg-gray-100 min-h-screen">
+<aside id="sidebar" class="hidden w-64 bg-white shadow-md md:block">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold">🗂️ TaskMaster</h1>
+        </div>
+        <nav class="px-6">
+            <a href="../home-page/home.html"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Dashboard</a>
+            <a href="../tasks-page/task.html"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded mt-1">Tasks</a>
+            <a href="../calendar-page/calendar.html"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded mt-1">Statistika</a>
+            <a href="home.html" class="block py-2 px-4 text-red-600 hover:bg-red-100 rounded mt-6">Logout</a>
+        </nav>
+    </aside>
+
+    <section class="mt-10 w-full p-4">
+        <!-- Burger Button (only visible on mobile) -->
+        <button id="burgerBtn" class="md:hidden block text-gray-700 mb-6 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div class="nav flex justify-between items-center w-full">
+            <h3 class="text-2xl font-semibold mb-4">📋 Vazifalar ro‘yxati</h3>
+            <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create
+                Task</button>
+        </div>
+        <div id="taskList" class="space-y-4"></div>
+        <!-- Modal -->
+        <div id="taskModal" class="flex fixed inset-0 bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white p-6 rounded-lg w-full max-w-md shadow-lg">
+                <h3 class="text-xl font-bold mb-4">🆕 Yangi vazifa qo‘shish</h3>
+                <input type="text" id="newTaskTitle" placeholder="Vazifa nomi..."
+                    class="w-full border px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="date" id="newTaskDate" placeholder="Vazifa kuni..."
+                    class="w-full border px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="time" id="newTaskTime" placeholder="Vazifa soati..."
+                    class="w-full border px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" id="newTaskCategory" placeholder="Vazifa qaysi yonalish bo'yicha..."
+                    class="w-full border px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex justify-end space-x-2">
+                    <button onclick="closeModal()"
+                        class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400">
+                        Bekor qilish
+                    </button>
+                    <button onclick="addTask()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        Qo‘shish
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="./task.js"></script>
+</body>
+
+</html>

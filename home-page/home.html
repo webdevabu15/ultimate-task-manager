@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Task Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex bg-gray-100 min-h-screen">
+
+  <!-- Sidebar -->
+<aside id="sidebar" class="hidden w-64 bg-white shadow-md md:block">
+    <div class="p-6">
+      <h1 class="text-2xl font-bold">🗂️ TaskMaster</h1>
+    </div>
+    <nav class="px-6">
+      <a href="home.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Dashboard</a>
+      <a href="../tasks-page/task.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded mt-1">Tasks</a>
+      <a href="../calendar-page/calendar.html" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded mt-1">Statistika</a>
+      <a href="home.html" class="block py-2 px-4 text-red-600 hover:bg-red-100 rounded mt-6">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-6">
+      <h2 class="text-3xl font-semibold md: hidden">Dashboard</h2>
+      <!-- Burger Button (only visible on mobile) -->
+        <button id="burgerBtn" class="md:hidden block text-gray-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+      <div class="flex items-center space-x-4">
+        <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
+      </div>
+    </header>
+
+    <!-- Welcome Card -->
+    <section class="mb-6">
+      <div class="bg-white p-6 rounded-lg shadow flex justify-between items-center">
+        <div>
+          <h3 class="text-2xl font-bold">You are Welcome, <span id="userName" class="text-blue-600"></span>!</h3>
+          <p class="text-gray-600 mt-1">Bugungi topshiriq holatiga nazar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-lg text-gray-600 sm: text-base">Umumiy vazifalar</h4>
+        <p class="text-3xl font-bold mt-2 sm: text-sm" id="totalTasks">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-lg text-gray-600 sm: text-base">Tugallangan</h4>
+        <p class="text-3xl font-bold mt-2 sm: text-sm" id="completedTasks">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-lg text-gray-600 sm: text-base">Faol</h4>
+        <p class="text-3xl font-bold mt-2 sm: text-sm" id="activeTasks">0</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-lg text-gray-600  sm: text-base">Bugun</h4>
+        <p class="text-3xl font-bold mt-2 sm: text-sm" id="todayTasks">0</p>
+      </div>
+    </section>
+    <!-- Task List -->
+    <section class="mt-10 sm: mb-20">
+        <h3 class="text-2xl font-semibold mb-4 sm: text-base">📋 Vazifalar ro‘yxati</h3>
+        <div id="taskList" class="space-y-4"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer or Mobile Logout -->
+  <footer class="md:hidden bg-white p-4 shadow fixed bottom-0 w-full">
+    <button id="logoutBtnMobile" class="w-full bg-red-500 text-white py-2 rounded">Chiqish</button>
+  </footer>
+
+ <script src="./home.js"></script>
+
+</body>
+</html>
