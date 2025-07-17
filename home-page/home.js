@@ -1,6 +1,18 @@
 document.getElementById("logoutBtn").addEventListener("click", logout);
 document.getElementById("logoutBtnMobile").addEventListener("click", logout);
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDR6nkTWxBFGUWDEKBJZuy21tN47I0Jb0g",
+  authDomain: "ultimate-task-manager-a891a.firebaseapp.com",
+  databaseURL: "https://ultimate-task-manager-a891a-default-rtdb.firebaseio.com",
+  projectId: "ultimate-task-manager-a891a",
+  storageBucket: "ultimate-task-manager-a891a.firebasestorage.app",
+  messagingSenderId: "180037885484",
+  appId: "1:180037885484:web:360cc20cbd0b25a7ad3b89",
+  measurementId: "G-789ZVPTDC1"
+};
+
+
 const userRaw = localStorage.getItem("user");
 const user = userRaw ? JSON.parse(userRaw) : { name: "Foydalanuvchi" };
 document.getElementById("userName").textContent = user.name;
@@ -82,3 +94,4 @@ renderTasks();
   })
 
   ;
+
