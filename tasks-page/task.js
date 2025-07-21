@@ -1,19 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDR6nkTWxBFGUWDEKBJZuy21tN47I0Jb0g",
-  authDomain: "ultimate-task-manager-a891a.firebaseapp.com",
-  databaseURL: "https://ultimate-task-manager-a891a-default-rtdb.firebaseio.com",
-  projectId: "ultimate-task-manager-a891a",
-  storageBucket: "ultimate-task-manager-a891a.firebasestorage.app",
-  messagingSenderId: "180037885484",
-  appId: "1:180037885484:web:360cc20cbd0b25a7ad3b89",
-  measurementId: "G-789ZVPTDC1"
-};
-
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 class Task {
   constructor(title, date, time, category, completed = false, id = null) {
